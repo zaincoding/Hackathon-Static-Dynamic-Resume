@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+    <title>Static Resume</title>
+
+
+</head>
+<body>
+    <div class="resume" id="resume-content">
+        <section class="personal-info">
+            <h2>Personal Information</h2>
+            <img  src="img/Profile.PNG" alt="Profile Picture">
+            <p><strong>Name:</strong> <span id="name-display">Zain Khan</span></p>
+            <p><strong>Address:</strong> <span id="address-display">M.T.Khan Road Sultanabad</span></p>
+            <p><strong>Phone Number:</strong> <span id="phone-display">03122979793</span></p>
+            <p><strong>Email:</strong> <span id="email-display">zainmd.htm@gmail.com</span></p>
+            <p><strong>About Me:</strong> <span id="about-display">I am a web developer specializing in responsive, user-friendly websites. With expertise in HTML, CSS, JavaScript, TypeScript, Next.js Tailwind CSS, and React, I create high-performance, accessible, and engaging web applications.</span></p>
+        </section>
+        
+
+
+        
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <p><strong>Degree:</strong></p>
+            <p><span id="degree-display">Bachelor of Software Engineering (BSSE)</span></p>
+            <p><strong>School/Academy:</strong></p>
+            <p><span id="university-display"> University</span></p>
+            <p><strong>Start Date:</strong></p>
+            <p><span id="degree-start-display">March, 2013.</span></p>
+            <p><strong>End Date:</strong></p>
+            <p><span id="degree-end-display"> May, 2017</span></p>
+
+            <p><strong>Certification</strong></p>
+            <p><span id="certification-display"> Cloud Applied Generative AI Engineer (GenEng)</span></p>
+            <p><strong>School/Academy:</strong></p>
+            <p><span id="cert-school-display">Governor IT Program </span></p>
+            <p><strong>Start Date:</strong></p>
+            <p><span id="cert-start-display">February, 2024</span></p>
+            <p><strong>End Date:</strong></p>
+            <p><span id="cert-end-display">In Progress</span></p>
+        </section>
+        
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <ul id="skills-display">
+                <li>HTML, CSS, JavaScript</li>
+                <li>TypeScript</li>
+                <li>Next.js, Tailwind CSS, React</li>
+            </ul>
+        </section>
+        
+        <section id="work-experience-section" class="work-experience">
+            <h2>Work Experience</h2>
+            <p><strong>Job Title:</strong></p>
+            <p><span id="jobTitle-display">Freelancer</span></p>
+            <p><strong>Company Name: </strong></p>
+            <p><span id="company-display">Self-Employed</span></p>
+            <p><strong>From</strong></p>
+            <p><span id="workStartDate-display">2023</span></p>
+            <p><strong>Till</strong></p>
+            <p><span id="workEndDate-display">2024</span></p>
+        </section>
+
+        <div class="button">
+            <button id="form-toggle-button" onclick="toggleForm()">Resume Builder</button>
+            <button  id="download-button" style="display: none; float: left;" onclick="downloadResume()">Download Resume as PDF</button>
+
+            <button style="float: right;" onclick="toggleSection('skills')">Toggle Skills</button>
+            <button style="float: right;" onclick="toggleSection('education')">Toggle Education</button>
+        </div>
+    </div>
+
+    <!-- Dynamic Input Form to Update Information -->
+    <div class="resume input" id="update-form" style="display: none;">
+        <h3>Update Personal Information</h3>
+        <label for="profile-image">Profile Image:</label><br>
+        <input type="file" id="profile-image" accept="image/*"><br><br>
+       <label for="name">Name:<br/>
+        <input type="text" id="name" placeholder="Enter name"></label><br/><br/>
+        <label for="address">Address:<br />
+        <input type="text" id="address" placeholder="Enter address"></label><br/><br/>
+        <label for="phone">Phone Number:<br />
+        <input type="text" id="phone" placeholder="Enter phone number"></label><br/><br/>
+        <label for="email">Email:<br/>
+        <input type="email" id="email" placeholder="Enter email"></label><br/><br/>
+        <label for="about">About Me:<br/>
+       <p> <textarea style="width: 300px ; height: 100px;" id="about" placeholder="Write about yourself"></textarea></p>
+
+       <!--- Education  -->
+       <h2> Update Education</h2>
+       <label for="degree">Degree:<br/>
+        <input type="text" id="degree" placeholder="Enter education"></label><br/><br/>
+    
+       <label for="university"><strong>School/Academy:</strong></label><br>
+       <input type="text" id="university" placeholder="Enter school/academy"><br/><br/>
+       
+   
+       <label for="degree-start"><strong>Start Date:</strong></label><br>
+       <input type="date" id="degree-start" placeholder="Enter start date"><br/><br/>
+       
+
+       <label for="degree-end"><strong>End Date:</strong></label><br>
+       <input type="date" id="degree-end" placeholder="Enter end date"><br/><br/>
+       
+  
+       <label for="certification"><strong>Certification:</strong></label><br>
+       <input type="text" id="certification" placeholder="Enter certification"><br/><br/>
+       
+      
+       <label for="cert-school"><strong>School/Academy:</strong></label><br>
+       <input type="text" id="cert-school" placeholder="Enter certification school/academy" ><br/><br/>
+       
+  
+       <label for="cert-start"><strong>Start Date:</strong></label><br/>
+       <input type="date" id="cert-start" placeholder="Enter start date"><br/><br/>
+       
+  
+       <label for="cert-end"><strong>End Date:</strong></label><br>
+       <input type="text" id="cert-end" placeholder="Enter end date or 'In Progress'"><br/><br/>
+
+
+              <!---- Skills -->
+              <label for="skillsInput">Update Skills:</label><br>
+              <input type="text" id="skillsInput" placeholder="Enter skills, separated by commas"><br/><br/>
+              
+             <!----Work Experience -->
+    <h3>Update Work Experience</h3>
+    <label for="job-title">Job Title:</label><br>
+    <input type="text" id="job-title" placeholder="Enter job title"><br/><br/>
+
+    <label for="company-name">Company Name:</label><br>
+    <input type="text" id="company-name" placeholder="Enter company name"><br/><br/>
+
+    <label for="work-start-date">From:</label><br>
+    <input type="Date" id="work-start-date" placeholder="Enter start year"><br/><br/>
+
+    <label for="work-end-date">Till:</label><br>
+    <input type="Date" id="work-end-date" placeholder="Enter end year"><br/><br/>
+
+
+
+
+
+
+       <p><button style="max-width:fit-content;"  id="Submit-info" onclick="submitPersonalInfo()">Submit Info</button>
+        <button onclick="toggleForm()">Cancel</button></p>
+
+
+
+       
+
+    </div>
+
+    <script src="update.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

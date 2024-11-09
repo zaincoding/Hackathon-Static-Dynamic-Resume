@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: dimgrey;
+    color: #333;
+}
+
+.resume {
+    width: 60%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 10px 0px 0px rgb(0,0,0,0.1);
+}
+
+h2 {
+    color: #0073e6;
+}
+
+.personal-info img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.input{
+     font:bolder;
+     color: #005bb5;
+     padding: 100px;
+     border: 1px solid #ddd;
+     
+}
+
+
+button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+
+    button{
+        max-width: 80px;
+        background-color:  #0073e6;
+    }
+}
+
+button:hover {
+    background-color: #005bb5;
+}
